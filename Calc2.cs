@@ -4,11 +4,10 @@ using System.Linq;
 using System.Collections.Generic;
 
 /// @author Aleksi Suuronen
-/// @version 22.11.2019
+/// @version 28.9.2020
 /// <summary>
-/// Calculus 2-kurssin viikon 3 viikkotehtävä 9 tehtynä tietokoneella.
-/// Etsitään yhtälölle x = (e^-x)/2 likiarvoratkaisu neljän desimaalin tarkkuudella missä x on alkuarvaus 0.3.
-/// Käytetään kiintopistemenetelmää.
+/// Etsitään yhtälölle x = (e^-x)/2 likiarvoratkaisu neljän desimaalin tarkkuudella missä x on alkuarvaus 0.3 käyttäen kiintopistemenetelmää.
+/// Tehtävässä tahdottiin siis tietää, montako iteraatiota tarvitaan, jotta saadaan desimaaliesitys tasaiseksi tietyllä tarkkuudella.
 /// 31 iteraatiota alkuarvauksella 0,3.
 /// 50 iteraatiota alkuarvauksella 1,0.
 /// </summary>
@@ -20,7 +19,7 @@ public class Kiintopistemenetelma
     public static void Main()
     {
         double alkuarvaus = 0.0;
-        Console.WriteLine("Syotä alkuarvaus: ");
+        Console.WriteLine("Syotä alkuarvaus muodossa, jossa desimaalierottimenia ',' : ");
         string arvaus = Console.ReadLine();
         try
         {
@@ -29,12 +28,12 @@ public class Kiintopistemenetelma
         {
             Console.WriteLine("Vääränlainen syöte!" + exception);
         }
-        Console.WriteLine("Syötä iteraatioiden määrä: ");
+        Console.WriteLine("Syötä iteraatioiden määrä kokonaislukuna: ");
         int maara = 0;
         string iteraatiot = Console.ReadLine();
         try
         {
-            maara = Int32.Parse(iteraatiot);
+          maara = Int32.Parse(iteraatiot);
         } catch (FormatException exception)
         {
             Console.WriteLine("Vääränlainen syöte!" + exception);
